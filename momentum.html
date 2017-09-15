@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Physics Calculator</title>
+	<link rel = "stylesheet" type = "text/css" href = "format.css" />
+	<script type="text/javascript">
+        function momentum() {
+        	var velocity = parseFloat(document.getElementById('velocity').value);
+        	var mass = parseFloat(document.getElementById('mass').value);
+        	if(isNaN(velocity) | isNaN(mass)){
+        		alert("Please Enter Valid Numbers!");
+        		return;
+        	}
+        	var momentum = velocity * mass;
+            alert(momentum);
+
+        }
+
+        function impulse() {
+        	var force = parseFloat(document.getElementById('force').value);
+        	var time = parseFloat(document.getElementById('time').value);
+        	if(isNaN(force) | isNaN(time)){
+        		alert("Please Enter Valid Numbers!");
+        		return;
+        	}
+        	var impulse = force * time;
+            alert(impulse);
+
+        }
+         
+    </script>
+
+</head>
+
+<body>
+<h1>Momentum</h1>
+<p>
+	Momentum
+	</br>
+	</br>
+    <label>Velocity:</label>
+    <input id = "velocity" />
+    <label>m/s</label>
+    </br>
+    </br>
+    <label>Mass:</label>
+    <input id = "mass" />
+    <label>kgs</label>
+    </br>
+    </br>
+    <button type="button" onclick="momentum()">Calculate</button>
+
+</p>
+</br>
+</br>
+<p>
+	Impulse (change in momentum)
+	</br>
+	</br>
+    <label>Force:</label>
+    <input id = "force" />
+    <label>Newtons</label>
+    </br>
+    </br>
+    <label>Time:</label>
+    <input id = "time" />
+    <label>seconds</label>
+    </br>
+    </br>
+    <button type="button" onclick="impulse()">Calculate</button>
+
+</p>
+
+
+</body>
+
+</html>

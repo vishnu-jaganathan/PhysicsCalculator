@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Physics Calculator</title>
+	<link rel = "stylesheet" type = "text/css" href = "format.css" />
+	<script type="text/javascript">
+        function hooke() {
+        	var displacement = parseFloat(document.getElementById('displacement').value);
+        	var constant = parseFloat(document.getElementById('constant').value);
+        	if(isNaN(constant) | isNaN(displacement)){
+        		alert("Please Enter Valid Numbers!");
+        		return;
+        	}
+        	var force = constant * displacement;
+            alert(force);
+
+        }
+
+        function gravity() {
+        	var mass1 = parseFloat(document.getElementById('mass1').value);
+        	var mass2 = parseFloat(document.getElementById('mass2').value);
+        	var distance = parseFloat(document.getElementById('distance').value);
+        	if(isNaN(mass1) | isNaN(mass2) | isNaN(distance)){
+        		alert("Please Enter Valid Numbers!");
+        		return;
+        	}
+        	var force = (0.00000000006673 * mass1 * mass2) / (1.0 * distance * distance);
+            alert(force);
+
+        }
+         
+    </script>
+
+</head>
+
+<body>
+<h1>Miscellaneous</h1>
+<p>
+	Force from Spring (Hooke's Law)
+	</br>
+	</br>
+    <label>Displacement:</label>
+    <input id = "displacement" />
+    <label>meters</label>
+    </br>
+    </br>
+    <label>Spring constant:</label>
+    <input id = "constant" />
+    <label>N/m</label>
+    </br>
+    </br>
+    <button type="button" onclick="hooke()">Calculate</button>
+
+</p>
+</br>
+</br>
+<p>
+	Gravitational Force
+	</br>
+	</br>
+    <label>Mass 1:</label>
+    <input id = "mass1" />
+    <label>kgs</label>
+    </br>
+    </br>
+    <label>Mass 2:</label>
+    <input id = "mass2" />
+    <label>kgs</label>
+    </br>
+    </br>
+    <label>Distance:</label>
+    <input id = "distance" />
+    <label>meters</label>
+    </br>
+    </br>
+    <button type="button" onclick="gravity()">Calculate</button>
+
+</p>
+
+
+</body>
+
+</html>

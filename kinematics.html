@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Physics Calculator</title>
+	<link rel = "stylesheet" type = "text/css" href = "format.css" />
+	<script type="text/javascript">
+        function avgV() {
+        	var initialV = parseFloat(document.getElementById('initial_v').value);
+        	var finalV = parseFloat(document.getElementById('final_v').value);
+        	if(isNaN(initialV) | isNaN(finalV)){
+        		alert("Please Enter Valid Numbers!");
+        		return;
+        	}
+        	var avgV = (initialV + finalV)/2.0
+            alert(avgV);
+
+        }
+
+        function displacement() {
+        	var initialV = parseFloat(document.getElementById('initial_v2').value);
+        	var acceleration = parseFloat(document.getElementById('acceleration').value);
+        	var time = parseFloat(document.getElementById('time').value);
+        	if(isNaN(initialV) | isNaN(acceleration) | isNaN(time)){
+        		alert("Please Enter Valid Numbers!");
+        		return;
+        	}
+        	var displacement = 0.5 * acceleration * time * time + initialV * time;
+            alert(displacement);
+
+        }
+
+        function velocity() {
+            var initialV = parseFloat(document.getElementById('initial_v3').value);
+            var acceleration = parseFloat(document.getElementById('acceleration2').value);
+            var time = parseFloat(document.getElementById('time2').value);
+            if(isNaN(initialV) | isNaN(acceleration) | isNaN(time)){
+                alert("Please Enter Valid Numbers!");
+                return;
+            }
+            var velocity = acceleration * time + initialV;
+            alert(velocity);
+
+        }
+         
+    </script>
+
+</head>
+
+<body>
+<h1>Kinematics</h1>
+<p>
+	Average Velocity
+	</br>
+	</br>
+    <label>Initial Velocity:</label>
+    <input id = "initial_v" />
+    <label>m/s</label>
+    </br>
+    </br>
+    <label>Final Velocity:</label>
+    <input id = "final_v" />
+    <label>m/s</label>
+    </br>
+    </br>
+    <button type="button" onclick="avgV()">Calculate</button>
+
+</p>
+</br>
+</br>
+<p>
+	Displacement
+	</br>
+	</br>
+    <label>Initial Velocity:</label>
+    <input id = "initial_v2" />
+    <label>m/s</label>
+    </br>
+    </br>
+    <label>Acceleration:</label>
+    <input id = "acceleration" />
+    <label>m/s^2</label>
+    </br>
+    </br>
+    <label>Time:</label>
+    <input id = "time" />
+    <label>seconds</label>
+    </br>
+    </br>
+    <button type="button" onclick="displacement()">Calculate</button>
+
+</p>
+</br>
+</br>
+<p>
+    Velocity
+    </br>
+    </br>
+    <label>Initial Velocity:</label>
+    <input id = "initial_v3" />
+    <label>m/s</label>
+    </br>
+    </br>
+    <label>Acceleration:</label>
+    <input id = "acceleration2" />
+    <label>m/s^2</label>
+    </br>
+    </br>
+    <label>Time:</label>
+    <input id = "time2" />
+    <label>seconds</label>
+    </br>
+    </br>
+    <button type="button" onclick="velocity()">Calculate</button>
+
+</p>
+
+
+</body>
+
+</html>

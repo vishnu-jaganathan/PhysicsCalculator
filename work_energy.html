@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Physics Calculator</title>
+	<link rel = "stylesheet" type = "text/css" href = "format.css" />
+	<script type="text/javascript">
+        function kineticEnergy() {
+        	var velocity = parseFloat(document.getElementById('velocity').value);
+        	var mass = parseFloat(document.getElementById('mass').value);
+        	if(isNaN(mass) | isNaN(velocity)){
+        		alert("Please Enter Valid Numbers!");
+        		return;
+        	}
+        	var ke = 0.5 * mass * velocity * velocity;
+            alert(ke);
+
+        }
+
+        function potentialEnergy() {
+        	var mass = parseFloat(document.getElementById('mass2').value);
+        	var height = parseFloat(document.getElementById('height').value);
+        	if(isNaN(mass) | isNaN(height)){
+        		alert("Please Enter Valid Numbers!");
+        		return;
+        	}
+        	var potE = mass * height * 9.81
+            alert(potE);
+
+        }
+
+        function work() {
+            var force = parseFloat(document.getElementById('force').value);
+            var distance = parseFloat(document.getElementById('distance').value);
+            if(isNaN(force) | isNaN(distance)){
+                alert("Please Enter Valid Numbers!");
+                return;
+            }
+            var work = force * distance;
+            alert(work);
+
+        }
+         
+    </script>
+
+</head>
+
+<body>
+<h1>Work and Energy</h1>
+<p>
+	Kinetic Energy
+	</br>
+	</br>
+    <label>Velocity:</label>
+    <input id = "velocity" />
+    <label>m/s</label>
+    </br>
+    </br>
+    <label>Mass:</label>
+    <input id = "mass" />
+    <label>kgs</label>
+    </br>
+    </br>
+    <button type="button" onclick="kineticEnergy()">Calculate</button>
+
+</p>
+</br>
+</br>
+<p>
+	Potential Energy
+	</br>
+	</br>
+    <label>Mass:</label>
+    <input id = "mass2" />
+    <label>kgs</label>
+    </br>
+    </br>
+    <label>Height:</label>
+    <input id = "height" />
+    <label>meters</label>
+    </br>
+    </br>
+    <button type="button" onclick="potentialEnergy()">Calculate</button>
+
+</p>
+</br>
+</br>
+<p>
+    Work
+    </br>
+    </br>
+    <label>Force:</label>
+    <input id = "force" />
+    <label>Newtons</label>
+    </br>
+    </br>
+    <label>Distance:</label>
+    <input id = "distance" />
+    <label>meters</label>
+    </br>
+    </br>
+    <button type="button" onclick="work()">Calculate</button>
+
+</p>
+
+
+
+</body>
+
+</html>
